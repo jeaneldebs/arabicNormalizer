@@ -21,11 +21,13 @@ Or install it yourself as:
     $ gem install arabicNormalizer
 
 ## Usage
-
+```
 require 'arabicNormalizer'
 
 ArabicNormalizer::normalize("مكتبٌ")
-=> "مكتب"
+=> 
+"مكتب"
+```
 
 ## License
 
