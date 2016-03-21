@@ -23,8 +23,7 @@ Or install it yourself as:
 require 'arabicNormalizer'
 
 ArabicNormalizer::normalize("مكتبٌ")
-=> 
-"مكتب"
+=> "مكتب"
 ```
 
 ## License
