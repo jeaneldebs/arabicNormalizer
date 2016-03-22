@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    arabicNormalizer (0.1.0)
+    arabic_normalizer (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -26,7 +26,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  arabicNormalizer!
+  arabic_normalizer!
   bundler (~> 1.11)
   rake (~> 10.0)
   rspec (~> 3.0)
