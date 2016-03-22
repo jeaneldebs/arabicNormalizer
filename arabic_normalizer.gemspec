@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'arabicNormalizer/version'
+require 'arabic_normalizer/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "arabicNormalizer"
+  spec.name          = "arabic_normalizer"
   spec.version       = ArabicNormalizer::VERSION
   spec.authors       = ["Jean Debs"]
   spec.email         = ["jean.el-debs@cookpad.com"]
 
-  spec.summary       = %q{arabicNormalizer is pure Ruby port of Arabic Normalizer from Lucene.}
-  spec.description   = %q{arabicNormalizer is pure Ruby port of Arabic Normalizer from Lucene.}
+  spec.summary       = %q{ArabicNormalizer is pure Ruby port of Arabic Normalizer from Lucene.}
+  spec.description   = %q{ArabicNormalizer is pure Ruby port of Arabic Normalizer from Lucene.}
   spec.homepage      = ""
   spec.license       = "MIT"
 

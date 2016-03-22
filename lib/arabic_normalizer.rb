@@ -1,4 +1,4 @@
-require "arabicNormalizer/version"
+require "arabic_normalizer/version"
 
 module ArabicNormalizer
   ALEF = "\u0627"
