@@ -28,24 +28,18 @@ module ArabicNormalizer
   SUKUN = "\u0652"
 
   def self.normalize(string)
-    s = string.split("")
-
-    s.map! do |elem|
-      case elem
-      when ALEF_MADDA, ALEF_HAMZA_ABOVE, ALEF_HAMZA_BELOW
-        ALEF
-      when YEH_HAMZA, DOTLESS_YEH
-        YEH
-      when TEH_MARBOUTA
-        HEH
-      when WAW_HAMZA
-        WAW
-      when TATWEEL, FATHATAN, DAMMATAN, KASRATAN, FATHA, DAMMA, KASRA, SHADDA, SUKUN
-        ""
-      else
-        elem
-      end
-    end
-    s.join("")
+    string.gsub(/[
+      #{ALEF_MADDA}#{ALEF_HAMZA_ABOVE}#{ALEF_HAMZA_BELOW}
+      #{YEH_HAMZA}#{DOTLESS_YEH}
+      #{TEH_MARBOUTA}
+      #{WAW_HAMZA}
+      #{TATWEEL}#{FATHATAN}#{DAMMATAN}#{KASRATAN}#{FATHA}#{DAMMA}#{KASRA}#{SHADDA}#{SUKUN}
+    ]/x,
+      ALEF_MADDA => ALEF, ALEF_HAMZA_ABOVE => ALEF, ALEF_HAMZA_BELOW => ALEF,
+      YEH_HAMZA => YEH, DOTLESS_YEH => YEH,
+      TEH_MARBOUTA => HEH,
+      WAW_HAMZA => WAW,
+      TATWEEL => '', FATHATAN => '', DAMMATAN => '', KASRATAN => '', FATHA => '', DAMMA => '', KASRA => '', SHADDA => '', SUKUN => ''
+    )
   end
 end
