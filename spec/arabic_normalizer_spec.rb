@@ -84,4 +84,9 @@ describe ArabicNormalizer do
     test = "كسْر"
     expect(ArabicNormalizer.normalize(test)).to eq "كسر"
   end
+
+  it "should not remove whitespaces" do
+    test = "اطباق بالفرن"
+    expect(ArabicNormalizer::normalize(test)).to eq test
+  end
 end

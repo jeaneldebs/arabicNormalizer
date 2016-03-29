@@ -27,19 +27,17 @@ module ArabicNormalizer
   SHADDA = "\u0651"
   SUKUN = "\u0652"
 
+  NORMALIZATION_RULES = {
+    ALEF_MADDA => ALEF, ALEF_HAMZA_ABOVE => ALEF, ALEF_HAMZA_BELOW => ALEF,
+    YEH_HAMZA => YEH, DOTLESS_YEH => YEH,
+    TEH_MARBOUTA => HEH,
+    WAW_HAMZA => WAW,
+    TATWEEL => '', FATHATAN => '', DAMMATAN => '', KASRATAN => '', FATHA => '', DAMMA => '', KASRA => '', SHADDA => '', SUKUN => ''
+  }
+
+  NORMALIZATION_REGEX = /[#{NORMALIZATION_RULES.keys.join}]/.freeze
+
   def self.normalize(string)
-    string.gsub(/[
-      #{ALEF_MADDA}#{ALEF_HAMZA_ABOVE}#{ALEF_HAMZA_BELOW}
-      #{YEH_HAMZA}#{DOTLESS_YEH}
-      #{TEH_MARBOUTA}
-      #{WAW_HAMZA}
-      #{TATWEEL}#{FATHATAN}#{DAMMATAN}#{KASRATAN}#{FATHA}#{DAMMA}#{KASRA}#{SHADDA}#{SUKUN}
-    ]/x,
-      ALEF_MADDA => ALEF, ALEF_HAMZA_ABOVE => ALEF, ALEF_HAMZA_BELOW => ALEF,
-      YEH_HAMZA => YEH, DOTLESS_YEH => YEH,
-      TEH_MARBOUTA => HEH,
-      WAW_HAMZA => WAW,
-      TATWEEL => '', FATHATAN => '', DAMMATAN => '', KASRATAN => '', FATHA => '', DAMMA => '', KASRA => '', SHADDA => '', SUKUN => ''
-    )
+    string.gsub(NORMALIZATION_REGEX, NORMALIZATION_RULES)
   end
 end
