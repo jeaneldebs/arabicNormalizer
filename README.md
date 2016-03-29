@@ -7,7 +7,7 @@ ArabicNormalizer is pure Ruby port of Arabic Normalizer from Lucene.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'arabicNormalizer'
+gem 'arabic_normalizer'
 ```
 
 And then execute:
@@ -16,11 +16,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install arabicNormalizer
+    $ gem install arabic_normalizer
 
 ## Usage
 ```
-require 'arabicNormalizer'
+require 'arabic_normalizer'
 
 ArabicNormalizer::normalize("مكتبٌ")
 => "مكتب"
